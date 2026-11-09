@@ -752,7 +752,7 @@ export default function App() {
             {/* Subtle vintage texture in page background - no blur */}
             <div className="absolute inset-0 paper-texture opacity-40 pointer-events-none" />
 
-            {/* 3D Gatefold Card Container - Exact Match for Reference Image Aspect Ratio (512x1024 = 1:2) */}
+            {/* 3D Gatefold Card Container - Exact Match for Hemant & Kritika Engagement Invitation.png (887x1774 = 1:2) */}
             <div
               onClick={handleOpenCard}
               className="relative w-[min(88vw,390px)] aspect-[1/2] max-h-[calc(100vh-60px)] rounded-3xl gatefold-perspective select-none shadow-[0_24px_60px_rgba(74,46,43,0.38)] cursor-pointer"
