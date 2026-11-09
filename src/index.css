@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .font-script {
+    font-family: 'Great Vibes', cursive;
+  }
+  .font-allura {
+    font-family: 'Allura', cursive;
+  }
+  .font-serif-royal {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+  .font-body {
+    font-family: 'Poppins', sans-serif;
+  }
+  .font-devanagari {
+    font-family: 'Noto Sans Devanagari', sans-serif;
+  }
+}
+
+/* Luxury Indian Wedding Palette & Ornaments */
+:root {
+  --color-gold-light: #F6E2B3;
+  --color-gold: #C9A24B;
+  --color-gold-dark: #98722B;
+  --color-peach: #F6D5C0;
+  --color-cream: #FDF8F2;
+  --color-maroon: #7A1F2B;
+  --color-sage: #4E6B56;
+}
+
+/* Metallic gold gradients */
+.gold-text-gradient {
+  background: linear-gradient(135deg, #B38728 0%, #E6C268 25%, #8B6508 50%, #F5DE98 75%, #AA771C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+}
+
+.gold-border-gradient {
+  border-image: linear-gradient(to right, #B38728, #F7E7B4, #D4AF37, #AA771C) 1;
+}
+
+.gold-foil-box {
+  background: linear-gradient(145deg, rgba(201, 162, 75, 0.15), rgba(246, 226, 179, 0.35));
+  border: 1px solid rgba(201, 162, 75, 0.45);
+}
+
+/* Gatefold 3D perspective container */
+.gatefold-perspective {
+  perspective: 2000px;
+}
+
+.door-left-origin {
+  transform-origin: left center;
+}
+
+.door-right-origin {
+  transform-origin: right center;
+}
+
+/* Subtle parchment paper grain background */
+.paper-texture {
+  background-color: #FAF3EC;
+  background-image: 
+    radial-gradient(#C9A24B 0.5px, transparent 0.5px), 
+    radial-gradient(#7A1F2B 0.4px, #FAF3EC 0.4px);
+  background-size: 28px 28px;
+  background-position: 0 0, 14px 14px;
+  background-repeat: repeat;
+}
+
+/* Shimmer animation for seals and cards */
+@keyframes goldShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer-gold {
+  background: linear-gradient(
+    90deg,
+    rgba(201, 162, 75, 0) 0%,
+    rgba(255, 246, 210, 0.6) 50%,
+    rgba(201, 162, 75, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: goldShimmer 3s infinite linear;
+}
+
+/* 3-Second Seal Gold Sweep Shimmer */
+@keyframes sealShimmerSweep {
+  0% {
+    transform: translateX(-160%) skewX(-20deg);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.65;
+  }
+  45% {
+    transform: translateX(180%) skewX(-20deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(180%) skewX(-20deg);
+    opacity: 0;
+  }
+}
+
+.animate-seal-shimmer {
+  animation: sealShimmerSweep 3s infinite ease-in-out;
+}
+
+/* Soft gold glow pulse */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 25px rgba(201, 162, 75, 0.3), 0 0 60px rgba(246, 213, 192, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 45px rgba(201, 162, 75, 0.55), 0 0 90px rgba(246, 213, 192, 0.7);
+  }
+}
+
+.pulse-card-glow {
+  animation: pulseGlow 4s infinite ease-in-out;
+}
+
+/* Custom delicate scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F8EFE6;
+}
+::-webkit-scrollbar-thumb {
+  background: #D8B775;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #AA771C;
+}

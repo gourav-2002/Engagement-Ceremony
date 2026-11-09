@@ -1,0 +1,6 @@
+{
+  "name": "Hemant & Kritika Wedding Invitation",
+  "description": "A luxury, royal Indian digital engagement ceremony invitation with an interactive 3D gatefold opening, personalized guest names, traditional shehnai instrumental music, countdown, schedule, venue map, and WhatsApp RSVP.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
