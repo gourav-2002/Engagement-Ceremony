@@ -62,13 +62,15 @@ export const ENGAGEMENT_CONFIG = {
 
   // Couple Cards
   groomCard: {
-    title: 'MR. HEMANT',
+    title: 'HEMANT',
     parents: 'Son of Mrs. Poonam and Mr. Naresh Kumar',
+    image: 'https://res.cloudinary.com/dqjlffxja/image/upload/v1791705044/Groom_in_Warm_Golden_Bokeh_wb3clb.png',
   },
   brideCard: {
-    title: 'MS. KRITIKA',
+    title: 'KRITIKA',
     parents: 'Daughter of Mrs. Sonam and Mr. Mukesh Kumar',
     residentOf: 'Pachpaddganj, Delhi',
+    image: 'https://res.cloudinary.com/dqjlffxja/image/upload/v1791705034/Serene_Festive_Saree_Portrait_scyebv.png',
   },
 
   // Occasion & Request Statements
@@ -750,10 +752,10 @@ export default function App() {
             {/* Subtle vintage texture in page background - no blur */}
             <div className="absolute inset-0 paper-texture opacity-40 pointer-events-none" />
 
-            {/* 3D Gatefold Card Container - Portrait, min(86vw, 380px), aspect 3/4.5, soft deep shadow */}
+            {/* 3D Gatefold Card Container - Exact Match for Reference Image Aspect Ratio (512x1024 = 1:2) */}
             <div
               onClick={handleOpenCard}
-              className="relative w-[min(86vw,380px)] aspect-[3/4.5] max-h-[calc(100vh-130px)] rounded-2xl gatefold-perspective select-none shadow-[0_22px_55px_rgba(74,46,43,0.32)] cursor-pointer"
+              className="relative w-[min(88vw,390px)] aspect-[1/2] max-h-[calc(100vh-60px)] rounded-3xl gatefold-perspective select-none shadow-[0_24px_60px_rgba(74,46,43,0.38)] cursor-pointer"
             >
               {/* Underlying Inner Invitation Page (Grows & scales 0.92 to 1.0 behind swinging doors) */}
               <div className="absolute inset-0 rounded-2xl bg-[#FFFDF9] border border-[#C9A24B]/40 overflow-hidden flex flex-col items-center justify-center p-6 text-center shadow-inner">
@@ -804,37 +806,23 @@ export default function App() {
                 }}
                 className="absolute top-0 bottom-0 left-0 w-1/2 rounded-l-2xl overflow-visible z-20 shadow-xl"
               >
-                {/* FRONT FACE OF LEFT DOOR - Clean peach-to-cream gradient, crisp borders, no blur */}
+                {/* FRONT FACE OF LEFT DOOR - High Quality Floral Reference Image */}
                 <div
                   style={{ backfaceVisibility: 'hidden' }}
-                  className="absolute inset-0 rounded-l-2xl overflow-hidden bg-gradient-to-r from-[#F6D5C0] via-[#FAF0E6] to-[#FBE8D8] border-r-0"
+                  className="absolute inset-0 rounded-l-3xl overflow-hidden bg-[#FAF0E6] border-r-0 shadow-inner"
                 >
-                  {/* Subtle fine paper grain */}
-                  <div className="absolute inset-0 paper-texture opacity-35 pointer-events-none" />
-
-                  {/* Gold double-line border inset 14px (2px outer + 1px inner) */}
-                  <div className="absolute top-[14px] left-[14px] bottom-[14px] right-0 border-t-2 border-l-2 border-b-2 border-[#C9A24B] pointer-events-none" />
-                  <div className="absolute top-[18px] left-[18px] bottom-[18px] right-0 border-t border-l border-b border-[#C9A24B]/70 pointer-events-none" />
-                  <div className="absolute top-[14px] bottom-[14px] right-0 w-[1px] bg-[#C9A24B]/40 pointer-events-none" />
-
-                  {/* Detailed corner floral art */}
-                  <GatefoldFloralCorner position="top-left" />
-                  <GatefoldFloralCorner position="bottom-left" />
-
-                  {/* Left half of hanging vine */}
-                  <div className="absolute top-0 right-0 w-24 h-8 overflow-hidden pointer-events-none">
-                    <svg viewBox="0 0 100 32" fill="none" className="w-full h-full">
-                      <path d="M0 0 Q 50 14, 100 8" stroke="#6C8A73" strokeWidth="1.4" />
-                      <circle cx="60" cy="14" r="2.8" fill="#FFFDF9" stroke="#E5BE72" strokeWidth="0.8" />
-                      <circle cx="25" cy="8" r="2" fill="#FDE047" />
-                    </svg>
-                  </div>
+                  <img
+                    src="/door-left.jpg"
+                    alt="Door Left"
+                    className="w-full h-full object-cover object-left select-none pointer-events-none"
+                    draggable={false}
+                  />
 
                   {/* Door edge shadow that darkens slightly on opening */}
                   <motion.div
                     animate={{ opacity: animStep === 'opening' ? 0.35 : 0 }}
                     transition={{ duration: 1.1 }}
-                    className="absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-black/25 to-transparent pointer-events-none"
+                    className="absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-black/30 to-transparent pointer-events-none"
                   />
                 </div>
 
@@ -872,37 +860,23 @@ export default function App() {
                 }}
                 className="absolute top-0 bottom-0 right-0 w-1/2 rounded-r-2xl overflow-visible z-20 shadow-xl"
               >
-                {/* FRONT FACE OF RIGHT DOOR - Clean peach-to-cream gradient, crisp borders, no blur */}
+                {/* FRONT FACE OF RIGHT DOOR - High Quality Floral Reference Image */}
                 <div
                   style={{ backfaceVisibility: 'hidden' }}
-                  className="absolute inset-0 rounded-r-2xl overflow-hidden bg-gradient-to-l from-[#F6D5C0] via-[#FAF0E6] to-[#FBE8D8] border-l-0"
+                  className="absolute inset-0 rounded-r-3xl overflow-hidden bg-[#FAF0E6] border-l-0 shadow-inner"
                 >
-                  {/* Subtle fine paper grain */}
-                  <div className="absolute inset-0 paper-texture opacity-35 pointer-events-none" />
-
-                  {/* Gold double-line border inset 14px (2px outer + 1px inner) */}
-                  <div className="absolute top-[14px] right-[14px] bottom-[14px] left-0 border-t-2 border-r-2 border-b-2 border-[#C9A24B] pointer-events-none" />
-                  <div className="absolute top-[18px] right-[18px] bottom-[18px] left-0 border-t border-r border-b border-[#C9A24B]/70 pointer-events-none" />
-                  <div className="absolute top-[14px] bottom-[14px] left-0 w-[1px] bg-[#C9A24B]/40 pointer-events-none" />
-
-                  {/* Detailed corner floral art */}
-                  <GatefoldFloralCorner position="top-right" />
-                  <GatefoldFloralCorner position="bottom-right" />
-
-                  {/* Right half of hanging vine */}
-                  <div className="absolute top-0 left-0 w-24 h-8 overflow-hidden pointer-events-none scale-x-[-1]">
-                    <svg viewBox="0 0 100 32" fill="none" className="w-full h-full">
-                      <path d="M0 0 Q 50 14, 100 8" stroke="#6C8A73" strokeWidth="1.4" />
-                      <circle cx="60" cy="14" r="2.8" fill="#FFFDF9" stroke="#E5BE72" strokeWidth="0.8" />
-                      <circle cx="25" cy="8" r="2" fill="#FDE047" />
-                    </svg>
-                  </div>
+                  <img
+                    src="/door-right.jpg"
+                    alt="Door Right"
+                    className="w-full h-full object-cover object-right select-none pointer-events-none"
+                    draggable={false}
+                  />
 
                   {/* Door edge shadow that darkens slightly on opening */}
                   <motion.div
                     animate={{ opacity: animStep === 'opening' ? 0.35 : 0 }}
                     transition={{ duration: 1.1 }}
-                    className="absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-black/25 to-transparent pointer-events-none"
+                    className="absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-black/30 to-transparent pointer-events-none"
                   />
                 </div>
 
@@ -923,103 +897,11 @@ export default function App() {
                 </div>
               </motion.div>
 
-              {/* CARD PANELS TEXT (Cleanly positioned above and below the seal, never overlapping) */}
-              <motion.div
-                animate={{
-                  opacity: animStep === 'opening' ? 0 : 1,
-                }}
-                transition={{ duration: 0.35 }}
-                className="absolute inset-0 pointer-events-none z-25 flex flex-col items-center justify-between py-6 px-4 text-center select-none"
-              >
-                {/* UPPER HALF: Above the seal */}
-                <div className="flex flex-col items-center justify-center mt-1">
-                  {/* Small ornamental Ganesh logo */}
-                  <div className="w-10 h-10 mb-1 flex items-center justify-center">
-                    <img src="/Ganesh-logo.png" alt="Ganesh" className="w-full h-full object-contain" />
-                  </div>
+              {/* CARD PANELS OVERLAY TEXT - Cleanly integrated with the art */}
+              {/* Note: Front typography, flowers, balloons and decorations are embedded seamlessly in the reference art */}
 
-                  {/* "Hemant & Kritika" in large script font (Great Vibes), maroon */}
-                  <div className="font-script text-3xl sm:text-4xl text-[#7A1F2B] leading-tight my-0.5 drop-shadow-sm">
-                    <div>{ENGAGEMENT_CONFIG.groom}</div>
-                    <div className="text-lg sm:text-xl text-[#AA771C] font-serif my-[-4px]">&amp;</div>
-                    <div>{ENGAGEMENT_CONFIG.bride}</div>
-                  </div>
-
-                  {/* "ENGAGEMENT CEREMONY" */}
-                  <div className="flex items-center gap-2 mt-1.5">
-                    <span className="text-[#C9A24B] text-sm">✦</span>
-                    <div className="text-[11px] sm:text-xs tracking-[0.3em] uppercase font-serif-royal text-[#AA771C] font-semibold">
-                      {ENGAGEMENT_CONFIG.occasionTitle}
-                    </div>
-                    <span className="text-[#C9A24B] text-sm">✦</span>
-                  </div>
-                </div>
-
-                {/* LOWER HALF: Below the seal */}
-                <div className="flex flex-col items-center justify-center mb-0.5">
-                </div>
-              </motion.div>
-
-              {/* SEAL IN EXACT CENTER (72px fixed circle, split into two halves on door open) */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-auto">
-                <motion.div
-                  animate={{
-                    scale: animStep === 'pulse' ? [1, 0.92, 1.05] : 1,
-                  }}
-                  transition={{ duration: 0.2 }}
-                  onClick={handleOpenCard}
-                  className="relative w-[72px] h-[72px] cursor-pointer group"
-                >
-                  {/* LEFT HALF OF SEAL */}
-                  <motion.div
-                    animate={{
-                      x: animStep === 'cracking' || animStep === 'opening' ? -42 : 0,
-                      opacity: animStep === 'cracking' || animStep === 'opening' ? 0 : 1,
-                    }}
-                    transition={{ duration: 0.45, ease: 'easeOut' }}
-                    className="absolute top-0 left-0 w-[36px] h-[72px] overflow-hidden"
-                  >
-                    <div className="w-[72px] h-[72px] rounded-full bg-gradient-to-br from-[#7A1F2B] via-[#601420] to-[#480B13] border-2 border-[#C9A24B] shadow-xl flex items-center justify-center relative">
-                      <div className="absolute inset-1 rounded-full border border-[#F5DE98]/40 pointer-events-none" />
-                      <span className="font-serif-royal text-[22px] font-bold text-[#FBF5B7] tracking-wider whitespace-nowrap drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)] select-none">
-                        {ENGAGEMENT_CONFIG.monogram}
-                      </span>
-                    </div>
-                  </motion.div>
-
-                  {/* RIGHT HALF OF SEAL */}
-                  <motion.div
-                    animate={{
-                      x: animStep === 'cracking' || animStep === 'opening' ? 42 : 0,
-                      opacity: animStep === 'cracking' || animStep === 'opening' ? 0 : 1,
-                    }}
-                    transition={{ duration: 0.45, ease: 'easeOut' }}
-                    className="absolute top-0 right-0 w-[36px] h-[72px] overflow-hidden"
-                  >
-                    <div className="w-[72px] h-[72px] -ml-[36px] rounded-full bg-gradient-to-br from-[#7A1F2B] via-[#601420] to-[#480B13] border-2 border-[#C9A24B] shadow-xl flex items-center justify-center relative">
-                      <div className="absolute inset-1 rounded-full border border-[#F5DE98]/40 pointer-events-none" />
-                      <span className="font-serif-royal text-[22px] font-bold text-[#FBF5B7] tracking-wider whitespace-nowrap drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)] select-none">
-                        {ENGAGEMENT_CONFIG.monogram}
-                      </span>
-                    </div>
-                  </motion.div>
-
-                  {/* Subtle Gold Shimmer Sweep across the Seal every 3s */}
-                  <div className="absolute inset-0 rounded-full overflow-hidden pointer-events-none">
-                    <div className="w-full h-full animate-seal-shimmer bg-gradient-to-r from-transparent via-[#FFFBEB]/40 to-transparent" />
-                  </div>
-
-                  {/* Center crack sparkles on open */}
-                  {(animStep === 'cracking' || animStep === 'opening') && (
-                    <motion.div
-                      initial={{ scale: 0, opacity: 1 }}
-                      animate={{ scale: [0, 2.5], opacity: [1, 0] }}
-                      transition={{ duration: 0.55 }}
-                      className="absolute inset-0 m-auto w-6 h-6 rounded-full bg-[#FDE047] blur-[2px] pointer-events-none"
-                    />
-                  )}
-                </motion.div>
-              </div>
+              {/* SEAL IN EXACT CENTER - Hidden because the image already has the royal H&K seal embedded */}
+              {/* Note: Clicking anywhere on the card triggers handleOpenCard */}
             </div>
           </motion.div>
         )}
@@ -1164,10 +1046,27 @@ export default function App() {
           </div>
 
           {/* Groom & Bride Two-Card Layout */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 my-6">
             {/* Groom Card */}
-            <div className="p-5 rounded-2xl bg-gradient-to-b from-[#FFFDF9] to-[#FAF2E8] border border-[#C9A24B]/40 shadow-sm text-center">
-              <div className="w-10 h-1 bg-[#7A1F2B] mx-auto rounded-full mb-3" />
+            <div className="p-5 rounded-2xl bg-gradient-to-b from-[#FFFDF9] to-[#FAF2E8] border border-[#C9A24B]/40 shadow-sm text-center flex flex-col items-center">
+              {/* Arch Photo Frame matching reference */}
+              <div className="relative mb-4 group">
+                {/* Decorative Floral Accent on Arch */}
+                <span className="absolute -top-2 left-2 text-sm select-none pointer-events-none z-10">🌸</span>
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 text-xs text-[#AA771C] select-none pointer-events-none z-10">▼</span>
+
+                <div className="w-36 h-48 sm:w-40 sm:h-52 rounded-t-full rounded-b-lg border-2 border-[#C9A24B] p-1 bg-gradient-to-b from-[#F5DE98]/40 to-transparent shadow-md overflow-hidden">
+                  <div className="w-full h-full rounded-t-full rounded-b-md overflow-hidden bg-[#FAF0E6]">
+                    <img
+                      src={ENGAGEMENT_CONFIG.groomCard.image}
+                      alt="Hemant - Groom"
+                      className="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="w-10 h-1 bg-[#7A1F2B] mx-auto rounded-full mb-2" />
               <span className="text-[10px] uppercase tracking-widest text-[#AA771C] font-semibold">
                 Groom
               </span>
@@ -1181,8 +1080,25 @@ export default function App() {
             </div>
 
             {/* Bride Card */}
-            <div className="p-5 rounded-2xl bg-gradient-to-b from-[#FFFDF9] to-[#FAF2E8] border border-[#C9A24B]/40 shadow-sm text-center">
-              <div className="w-10 h-1 bg-[#AA771C] mx-auto rounded-full mb-3" />
+            <div className="p-5 rounded-2xl bg-gradient-to-b from-[#FFFDF9] to-[#FAF2E8] border border-[#C9A24B]/40 shadow-sm text-center flex flex-col items-center">
+              {/* Arch Photo Frame matching reference */}
+              <div className="relative mb-4 group">
+                {/* Decorative Floral Accent on Arch */}
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 text-xs text-[#AA771C] select-none pointer-events-none z-10">▼</span>
+                <span className="absolute -top-2 right-2 text-sm select-none pointer-events-none z-10">🌸</span>
+
+                <div className="w-36 h-48 sm:w-40 sm:h-52 rounded-t-full rounded-b-lg border-2 border-[#C9A24B] p-1 bg-gradient-to-b from-[#F5DE98]/40 to-transparent shadow-md overflow-hidden">
+                  <div className="w-full h-full rounded-t-full rounded-b-md overflow-hidden bg-[#FAF0E6]">
+                    <img
+                      src={ENGAGEMENT_CONFIG.brideCard.image}
+                      alt="Kritika - Bride"
+                      className="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="w-10 h-1 bg-[#AA771C] mx-auto rounded-full mb-2" />
               <span className="text-[10px] uppercase tracking-widest text-[#AA771C] font-semibold">
                 Bride
               </span>
@@ -1193,7 +1109,6 @@ export default function App() {
               <p className="text-xs text-[#5C3E3A] font-serif leading-relaxed">
                 {ENGAGEMENT_CONFIG.brideCard.parents}
               </p>
-
             </div>
           </div>
 
